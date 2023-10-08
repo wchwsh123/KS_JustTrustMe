@@ -1,0 +1,26 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 30
+    defaultConfig {
+        applicationId 'just.trust.me'
+        minSdkVersion 17
+        targetSdkVersion 30
+        versionCode 3
+        versionName '.3'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
+    productFlavors {
+    }
+    useLibrary 'org.apache.http.legacy'
+}
+
+dependencies {
+    compileOnly fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'org.apache.httpcomponents:httpcore:4.4.2'
+}
